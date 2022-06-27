@@ -4,6 +4,8 @@ import App from './App.vue'
 import About from './About.vue'
 import Home from './Home.vue'
 
+import pageRoutes from '~pages'
+
 const routes = [
     { path: '/about', component: About },
     { path: '/home', component: Home },
@@ -11,7 +13,10 @@ const routes = [
 
 const router = createRouter({
     history: createWebHashHistory(),
-    routes, 
+    routes: [
+        ...routes,
+        ...pageRoutes
+    ]
 })
 
 const app = createApp(App)
