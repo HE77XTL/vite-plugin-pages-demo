@@ -1,9 +1,13 @@
 <script setup lang="ts">
+import DemoA from '../components/DemoA.vue';
 console.log('my-page')
 </script>
 
 <template>
-  my-page
+  <div>
+    my-page
+    <DemoA></DemoA>
+  </div>
 
 </template>
 
