@@ -7,6 +7,7 @@ console.log('my-page')
   <div>
     my-page
     <DemoA></DemoA>
+    <el-button type="primary">Primary</el-button>
   </div>
 
 </template>

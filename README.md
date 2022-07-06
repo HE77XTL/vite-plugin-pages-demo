@@ -5,5 +5,5 @@
 vite-plugin-pages
 
 ### 组价自动导入
-unplugin-vue-components
+unplugin-vue-components 
 
