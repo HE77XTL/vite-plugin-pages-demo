@@ -1,14 +1,24 @@
 <script setup lang="ts">
-import DemoA from '../components/DemoA.vue';
-console.log('my-page')
+    import {userStore} from '../store/test';
+
+    const {getTestNum} = userStore();
+    console.log('testStore');
+    console.log(getTestNum);
+
+
+
+    console.log('my-page');
 </script>
 
 <template>
-  <div>
-    my-page
-    <DemoA></DemoA>
-    <el-button type="primary">Primary</el-button>
-  </div>
+    <div>
+        my-page
+        <div>
+
+        </div>
+        <DemoA></DemoA>
+        <el-button type="primary">Primary</el-button>
+    </div>
 
 </template>
 
