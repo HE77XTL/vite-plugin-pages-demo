@@ -1,10 +1,11 @@
 <script setup lang="ts">
-console.log('ahout-page')
+
 </script>
 
 <template>
-  ahout-page
-
+    <div>
+        head
+    </div>
 </template>
 
 <style>

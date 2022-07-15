@@ -1,10 +1,11 @@
 <script setup lang="ts">
-console.log('home-page')
+
 </script>
 
 <template>
-  home-page
-
+    <div>
+        menu
+    </div>
 </template>
 
 <style>
