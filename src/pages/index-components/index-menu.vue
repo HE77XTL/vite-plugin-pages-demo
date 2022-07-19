@@ -1,10 +1,10 @@
 <template>
   <div>
-    menu
+      menu
+      <i class="ds-iconfont ds-icon-menu"></i>
   </div>
 </template>
-<script>
-  export default {
-      name: "IndexMenu"
-  }
+
+<script lang="ts" setup>
+
 </script>
