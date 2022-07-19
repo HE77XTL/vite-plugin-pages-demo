@@ -1,13 +1,11 @@
 <script setup lang="ts">
-console.log('app-xxx')
+    console.log('app-xxx');
 </script>
 
 <template>
-<div>
-  app--
-</div>
-   <router-view/>
-
+    <div>
+        <router-view/>
+    </div>
 </template>
 
 <style>
