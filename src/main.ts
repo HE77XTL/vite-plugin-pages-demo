@@ -11,15 +11,17 @@ import pageRoutes from '~pages'
 console.log('pageRoutes');
 console.log(pageRoutes);
 
-// const routes = [
-//     { path: '/about', component: About },
-// ]
+const routes = [
+    { path: '/', redirect: '/dashboard' }
+];
 
 const router = createRouter({
     history: createWebHashHistory(),
     routes: [
-        // ...routes,
-        ...pageRoutes
+        ...routes,
+        ...pageRoutes,
+
+        // 404
     ]
 })
 
