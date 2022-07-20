@@ -25,5 +25,12 @@ export default defineConfig({
             dirs: ['src/components'],
             resolvers: [ElementPlusResolver()],
         })
-    ]
+    ],
+    server: {
+        host: true,
+        port: 8080,
+        watch: {
+            usePolling: true
+          }
+    }
 });
