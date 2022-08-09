@@ -1,4 +1,5 @@
 import {defineConfig} from 'vite';
+import { join, resolve } from "path";
 import vue from '@vitejs/plugin-vue';
 import Pages from 'vite-plugin-pages';
 import Components from 'unplugin-vue-components/vite';
@@ -32,5 +33,6 @@ export default defineConfig({
         watch: {
             usePolling: true
           }
-    }
+    },
 });
+

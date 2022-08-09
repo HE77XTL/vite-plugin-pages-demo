@@ -1,5 +1,8 @@
 <template>
     <div>
-        dashboard---heds -- page
+        <auto-breadcrumb/>
+        <div>
+            dashboard
+        </div>
     </div>
 </template>

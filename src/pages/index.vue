@@ -1,32 +1,34 @@
 <template>
-    <div class="indexLayout">
+    <div class="indexLayout" :class="{menuCollapse: menuStore.isCollapse}">
         <div class="layoutHeader">
-            <index-header></index-header>
+            <IndexHeader></IndexHeader>
         </div>
         <div class="layoutMenu">
-            <index-menu></index-menu>
+            <div class="menuWrap">
+                <IndexMenu></IndexMenu>
+            </div>
         </div>
         <div class="layoutContent">
             <router-view></router-view>
         </div>
-
     </div>
 </template>
-<script>
+<script setup>
+    import {storeToRefs} from "pinia";
+    import {menu} from '../store/menu'
     import IndexMenu from './index-components/index-menu.vue'
     import IndexHeader from './index-components/index-header.vue'
 
-    export default {
-        components: {
-            IndexMenu,
-            IndexHeader
-        },
-    }
+    const menuStore = menu();
+    const {isCollapse} = storeToRefs(menuStore)
+
+
 </script>
 
 <style scoped lang="less">
-    @headerHeight: 80px;
+    @headerHeight: 60px;
     @menuWidth: 200px;
+    @menuTransitionTime: 0.7s;
 
     .indexLayout {
         width: 100vw;
@@ -35,29 +37,45 @@
         position: relative;
         padding-top: @headerHeight;
         padding-left: @menuWidth;
+        transition: padding-left @menuTransitionTime;
 
         .layoutHeader, .layoutMenu {
             position: absolute;
         }
+
         .layoutHeader {
             top: 0;
-            left: @menuWidth;
+            left: 0;
             right: 0;
             height: @headerHeight;
-            background: #cccccc;
+            border-bottom: 1px solid #ddd;
         }
+
         .layoutMenu {
-            top: 0;
+            top: @headerHeight;
             bottom: 0;
             left: 0;
             width: @menuWidth;
-            background: #b3d4fc;
+            border: 1px solid #ddd;
+            overflow-x: hidden;
+            overflow-y: auto;
+            transition: width @menuTransitionTime;
+            .menuWrap {
+                width: @menuWidth;
+            }
         }
+
         .layoutContent {
             height: 100%;
-            background: #fcad54;
             overflow: auto;
 
+        }
+
+        &.menuCollapse {
+            padding-left: 0;
+            .layoutMenu {
+                width: 0;
+            }
         }
     }
 </style>
