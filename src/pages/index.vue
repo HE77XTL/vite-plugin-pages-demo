@@ -13,15 +13,14 @@
         </div>
     </div>
 </template>
-<script setup>
+<script setup lang="ts">
     import {storeToRefs} from "pinia";
     import {menu} from '../store/menu'
-    import IndexMenu from './index-components/index-menu.vue'
-    import IndexHeader from './index-components/index-header.vue'
+    import IndexMenu from './indexComponents/IndexMenu.vue'
+    import IndexHeader from './indexComponents/IndexHeader.vue'
 
     const menuStore = menu();
     const {isCollapse} = storeToRefs(menuStore)
-
 
 </script>
 
@@ -68,7 +67,6 @@
         .layoutContent {
             height: 100%;
             overflow: auto;
-
         }
 
         &.menuCollapse {

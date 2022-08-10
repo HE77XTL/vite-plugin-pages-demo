@@ -1,6 +1,8 @@
 <template>
     <div class="autoBreadcrumb">
-        <div class="toggleMenuIcon" @click="onMenuToggle">icon</div>
+        <div class="toggleMenuIcon" @click="onMenuToggle">
+            <i class="ds-iconfont ds-icon-collapse"></i>
+        </div>
         <div>breadcrumb/xx/xx</div>
         <div>{{menuStore.isCollapse}}</div>
     </div>
@@ -19,6 +21,9 @@
     .autoBreadcrumb {
         display: flex;
         align-items: center;
+        border: 1px solid #ddd;
+        position: absolute;
+        top: 0;
 
         .toggleMenuIcon {
             cursor: pointer;
