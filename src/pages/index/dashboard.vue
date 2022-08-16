@@ -1,6 +1,6 @@
 <template>
     <div class="commonPageWrap">
-        <AutoBreadcrumb/>
+        <auto-breadcrumb/>
         <div style="height: 30000px; width: 2000px">
             dashboard
         </div>

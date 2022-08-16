@@ -16,8 +16,8 @@
 <script setup lang="ts">
     import {storeToRefs} from "pinia";
     import {menu} from '../store/menu'
-    import IndexMenu from './indexComponents/IndexMenu.vue'
-    import IndexHeader from './indexComponents/IndexHeader.vue'
+    import IndexMenu from './indexComponents/index-menu.vue'
+    import IndexHeader from './indexComponents/index-header.vue'
 
     const menuStore = menu();
     const {isCollapse} = storeToRefs(menuStore)

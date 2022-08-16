@@ -1,6 +1,6 @@
 <template>
     <div class="commonPageWrap">
-        <AutoBreadcrumb/>
+        <auto-breadcrumb/>
         <div class="theme">
             theme
             <div class="themTest">
