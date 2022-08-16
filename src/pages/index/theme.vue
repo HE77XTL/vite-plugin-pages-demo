@@ -14,9 +14,12 @@
 </template>
 
 <script lang="ts" setup>
+    import store from 'store'
     const onChangeTheme = () => {
         const htmlNode = document.getElementsByTagName('html')[0];
         htmlNode.setAttribute("data-theme", 'technology');
+        store.set('appTheme', 'technology')
+
     }
 </script>
 
