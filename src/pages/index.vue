@@ -15,7 +15,7 @@
 </template>
 <script setup lang="ts">
     import {storeToRefs} from "pinia";
-    import {menu} from '../store/menu'
+    import {menu} from '../pinia/menu'
     import IndexMenu from './indexComponents/index-menu.vue'
     import IndexHeader from './indexComponents/index-header.vue'
 

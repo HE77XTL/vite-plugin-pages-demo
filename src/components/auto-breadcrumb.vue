@@ -8,7 +8,7 @@
     </div>
 </template>
 <script setup lang="ts">
-    import {menu} from '../store/menu'
+    import {menu} from '../pinia/menu'
 
     const menuStore = menu();
     const onMenuToggle = () => {

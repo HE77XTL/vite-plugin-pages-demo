@@ -40,4 +40,7 @@ user 页面， 对应组件文件夹 user-components, 组件名称 user-card.vue
   ，自动注册，命名请以 base-xxx 格式 
 
 
+### 状态管理
+
+[pinia](https://pinia.vuejs.org/)
 
