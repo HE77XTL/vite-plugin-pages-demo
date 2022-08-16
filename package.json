@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "dayjs": "^1.11.5",
     "element-plus": "^2.2.8",
     "pinia": "^2.0.16",
     "store": "^2.0.12",

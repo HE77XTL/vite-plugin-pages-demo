@@ -6,6 +6,9 @@
             <div class="themTest">
                 themTest
             </div>
+            <div>
+                {{dayjs().format('YYYY-MM-DD')}}
+            </div>
         </div>
         <div style="margin: 20px">
             <el-button @click="onChangeTheme">change theme</el-button>
@@ -15,6 +18,8 @@
 
 <script lang="ts" setup>
     import store from 'store'
+    import dayjs from 'dayjs';
+
     const onChangeTheme = () => {
         const htmlNode = document.getElementsByTagName('html')[0];
         htmlNode.setAttribute("data-theme", 'technology');
