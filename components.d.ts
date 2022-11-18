@@ -7,7 +7,8 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    AutoTest: typeof import('./src/components/auto-test.vue')['default']
+    AutoBreadcrumb: typeof import('./src/components/auto-breadcrumb.vue')['default']
+    AutoCommoPage: typeof import('./src/components/auto-commo-page.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

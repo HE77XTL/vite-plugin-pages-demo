@@ -1,4 +1,5 @@
 import {defineConfig} from 'vite';
+import {join, resolve} from "path";
 import vue from '@vitejs/plugin-vue';
 import Pages from 'vite-plugin-pages';
 import Components from 'unplugin-vue-components/vite';
@@ -28,9 +29,17 @@ export default defineConfig({
     ],
     server: {
         host: true,
-        port: 8080,
+        port: 8077,
         watch: {
             usePolling: true
-          }
+        },
+        proxy: {
+            '/api': {
+                target: 'http://localhost:8090',
+                changeOrigin: true,
+                rewrite: (path) => path.replace(/^\/api/, '')
+            },
+        }
     }
 });
+
