@@ -11,16 +11,24 @@
         <div class="layoutContent">
             <router-view></router-view>
         </div>
+        <div class="menuOperateIconWrap" @click="onMenuToggle">
+            <i v-show="isCollapse" class="ds-iconfont ds-icon-menu-expand menuOperate"/>
+            <i v-show="!isCollapse" class="ds-iconfont ds-icon-menu-fold menuOperate"/>
+        </div>
     </div>
 </template>
 <script setup lang="ts">
     import {storeToRefs} from "pinia";
-    import {menu} from '../pinia/menu'
-    import IndexMenu from './indexComponents/index-menu.vue'
-    import IndexHeader from './indexComponents/index-header.vue'
+    import {menu} from '../pinia/menu';
+    import IndexMenu from './index-components/index-menu.vue';
+    import IndexHeader from './index-components/index-header.vue';
 
     const menuStore = menu();
-    const {isCollapse} = storeToRefs(menuStore)
+    const {isCollapse} = storeToRefs(menuStore);
+
+    const onMenuToggle = () => {
+        menuStore.toggleCollapseStatus()
+    }
 
 </script>
 
@@ -59,6 +67,7 @@
             overflow-x: hidden;
             overflow-y: auto;
             transition: width @menuTransitionTime;
+
             .menuWrap {
                 width: @menuWidth;
             }
@@ -69,10 +78,30 @@
             overflow: auto;
         }
 
+        .menuOperateIconWrap {
+            position: absolute;
+            z-index: 1;
+            top: 50%;
+            left: calc(@menuWidth - 10px);
+            transform: translateY(-50%);
+            transition: left @menuTransitionTime;
+
+            .menuOperate {
+                font-size: 32px;
+                cursor: pointer;
+            }
+
+        }
+
         &.menuCollapse {
             padding-left: 0;
+
             .layoutMenu {
                 width: 0;
+            }
+
+            .menuOperateIconWrap {
+                left: 0;
             }
         }
     }
